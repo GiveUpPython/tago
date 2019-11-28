@@ -1,0 +1,562 @@
+ <style>
+      * {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      input {
+        -webkit-user-select: auto; /*webkitä¯ÀÀÆ÷*/
+      }
+      html,
+      body,
+      div,
+      span,
+      applet,
+      object,
+      iframe,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      blockquote,
+      pre,
+      a,
+      abbr,
+      acronym,
+      address,
+      big,
+      cite,
+      code,
+      del,
+      dfn,
+      em,
+      img,
+      ins,
+      kbd,
+      q,
+      s,
+      samp,
+      small,
+      strike,
+      strong,
+      sub,
+      sup,
+      tt,
+      var,
+      b,
+      u,
+      i,
+      center,
+      dl,
+      dt,
+      dd,
+      ol,
+      ul,
+      li,
+      fieldset,
+      form,
+      label,
+      legend,
+      table,
+      caption,
+      tbody,
+      tfoot,
+      thead,
+      tr,
+      th,
+      td,
+      article,
+      aside,
+      canvas,
+      details,
+      embed,
+      figure,
+      figcaption,
+      footer,
+      header,
+      menu,
+      nav,
+      output,
+      ruby,
+      section,
+      summary,
+      time,
+      mark,
+      audio,
+      video,
+      input {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font-weight: 200;
+        vertical-align: baseline;
+        font-style: normal;
+      }
+      .a2{
+        color: #A2A2A2;
+      }
+      .cc{
+        color: #CCCCCC;
+      }
+      .c6{
+        color: #6C6C6C;
+      }
+      .f12{
+        font-size: 12px
+      }
+      .f13{
+        font-size: 13px
+      }
+      .f14{
+        font-size: 14px
+      }
+      .f15{
+        font-size: 15px
+      }
+      .f16{
+        font-size: 16px
+      }
+      .fl{
+        float: left;
+      }
+      .fr{
+        float: right !important;
+      }
+      .mt10{
+        margin-top: 10px;
+      }
+      .tl{
+        text-align: left;
+      }
+      .tr{
+        text-align: right;
+      }
+      .tc{
+        text-align: center;
+      }
+      .clear{
+        clear: both;
+      }
+      body,html{
+        height: 100%;
+        background:#F7F7F7;
+        margin: 0 auto;
+      }
+      body{
+        padding-top: constant(safe-area-inset-top);
+        padding-left: constant(safe-area-inset-left);
+        padding-right: constant(safe-area-inset-right);
+        padding-bottom: constant(safe-area-inset-bottom);
+      }
+      #app {
+        font-family: 'Avenir', Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        color: #2c3e50;
+      }
+      .hannder{
+        height: 44px;
+        line-height: 44px;
+        padding: 0 15px;
+        background: #ffffff;
+      }
+      .app-container{
+        height: 100%;
+        width: 100%;
+      }
+      .app_Part{
+        background:rgba(255,255,255,1);
+        border-radius:5px;
+        margin: 12px 15px;
+        overflow: hidden;
+        font-size: 13px;
+      }
+      .van-hairline--top-bottom::after{
+        border: none !important;
+      }
+      .van-hairline--bottom::after{
+        border: none !important;
+      }
+      .brief{
+        word-break:keep-all;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+      }
+      .van-button--default{
+        border: none !important;
+      }
+      /* .van-nav-bar .van-icon{
+        color: #C8C8C8 !important;
+      } */
+      .van-cell--clickable:active{
+        background-color: white;
+      }
+      .van-tabs__line{
+        background-color: #F5DB44 !important;
+      }
+      .van-nav-bar__text{
+        color: #404040 !important;
+      }
+      .van-icon{
+        vertical-align: text-top;
+      }
+      .StartCertification{
+        width: 80%;
+        height: 44px !important;
+        margin: 0 auto !important;
+        display: inherit !important;
+        background-color: #f5db44 !important;
+        border-radius: 50px !important;
+      }
+      .smscontent{
+        border-radius: 6px;
+        background-color: #F0F0F0;
+        padding: 5px 13px;
+      }
+      /* .sendOut {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 1);
+        box-shadow: 0px -3px 20px 0px rgba(135, 135, 135, 0.1);
+      } */
+      .van-action-sheet__item{
+        font-size: 14px !important;
+        height: 56px !important;
+        line-height: 56px !important;
+      }
+      .van-action-sheet__cancel{
+        font-size: 13px !important;
+      }
+      .van-tabs--line .van-tabs__wrap{
+        position: fixed;
+        top: 44px;
+        width: 100%;
+        z-index: 99;
+      }
+      .van-tabs__nav--line{
+        padding: 0 24px 15px 24px !important;
+      }
+      .emit_bottom{
+        background:rgba(255,255,255,1);
+        padding: 14px 0;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        box-shadow:0px -3px 20px 0px rgba(135,135,135,0.1);
+      }
+      .enroll{
+        margin-top: 10px;
+      }
+      .enroll .custom-text img{
+        width: 42px;
+        height: 42px;
+        vertical-align: middle;
+        margin-right: 10px;
+        border-radius: 50%;
+      }
+      .boRIcol{
+        border-right: 1px solid #ebedf0;
+      }
+      .van-popup{
+        overflow: hidden !important;
+      }
+      .van-popup--right{
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color:rgba(246,246,246,1) !important;
+      }
+      .van-actionsheet__header{
+        border-bottom: 1px solid #ebedf0;
+      }
+      .van-nav-bar{
+        position: fixed !important;
+        width: 100%;
+        top: 0;
+        height: 44px !important;
+        line-height: 44px !important;
+        z-index: 2000 !important;
+      }
+      .van-nav-bar__title{
+        font-size: 17px !important;
+      }
+      .van-nav-bar__left{
+        left: 16px !important;
+      }
+      .van-nav-bar__right{
+        right: 16px !important;
+      }
+      .main-content{
+        margin-top: 57px;
+        /* margin-bottom: 48px; */
+      }
+      .van-action-sheet--withtitle{
+        border-radius: 5px 5px 0 0;
+        overflow: hidden;
+      }
+      .van-swipe__indicator {
+        opacity: .3;
+        border-radius: 4px !important;
+        width: 8px !important;
+        height: 4px !important;
+        -webkit-transition: opacity .2s;
+        transition: opacity .2s;
+        background-color: rgba(228, 228, 228, 1);
+      }
+      .van-swipe__indicator--active{
+        opacity: 1;
+        background-color: #F5DB44 !important;
+        width: 20px !important;
+        border-radius: 50px !important;
+        height: 4px !important;
+      }
+      .createLabel .custom-text{
+        background-image: url('../static/images/labelBg.png');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-size: 12px;
+        background-size: 100% 100%;
+        height: 30px;
+        display: inline-block;
+        line-height: 30px;
+        padding: 4px 24px 9px 13px;
+        color: black;
+      }
+      .lableImage{
+        width: 12px;
+        display: inline-block;
+        margin-top: 8px;
+        height: 12px;
+        vertical-align: top;
+      }
+      .lableList span{
+        background-image: url('../static/images/labelBg.png');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-size: 12px;
+        background-size: 86% 100%;
+        height: 30px;
+        display: inline-block;
+        line-height: 31px;
+        padding: 0 28px 0 19px;
+      }
+      .lableList{
+        border-bottom: 1px solid rgb(235, 237, 240);
+        margin-left: 15px;
+        padding-bottom: 18px;
+        margin-bottom: 10px;
+        padding-right: 15px;
+      }
+      .van-cell:not(:last-child)::after{
+        right: 16px !important;
+        left: 16px !important;
+      }
+      .label >>> .van-cell:not(:last-child)::after{
+        border: none;
+      }
+      .i{
+        padding: 1px 6px 0px 6px;
+        font-size: 14px;
+      }
+      .completedata{
+        min-width: 51px !important;
+        background-color: #f5db44 !important;
+        border: 1px solid #f5db44 !important;
+        border: none;
+        color: black;
+      }
+      .ss_get_prompt{
+        font-size: 12px;
+        color: #CCCCCC;
+        padding: 0px 15px 0 15px;
+      }
+      .van-icon-ellipsis{
+        font-size: 22px;
+      }
+      .iterations{
+        width:100%;
+        height:63px;
+        position: fixed;
+        bottom: 0;
+        background:rgba(255,255,255,1);
+        box-shadow:0px -3px 20px 0px rgba(135,135,135,0.1);
+      }
+      .iterations .StartCertification{
+        width: 75%;
+        margin-top: 10px !important;
+      }
+      .diagnostic{
+        text-align: center;
+        background-color: #fff;
+        padding: 0px 0 30px 0;
+        border-radius: 7px;
+        padding-top: 23px;
+      }
+      .diagnostic img{
+        width: 80px;
+        height: 80px;
+      }
+      .prompt_stdout{
+        width: 70%;
+        border-radius: 7px;
+        background-color: transparent !important;
+        padding-top: 16px;
+      }
+      .diagnostic p:nth-child(2){
+        padding: 20px 0 12px 0;
+      }
+      .diagnostic p:nth-child(3){
+        padding: 0 17px 0 21px;
+        text-align: left;
+      }
+      .close{
+        font-size: 26px !important;
+        color: white;
+        top: -14px;
+        width: 100%;
+        text-align: right;
+      }
+      .van-picker__confirm{
+        height: 44px;
+        position: relative;
+        padding: 0 !important;
+        width: 56px;
+      }
+      .van-picker__confirm:after{
+        content: '\00a0';
+        display: inline-block;
+        border: 1px solid #F5DB44;
+        border-top-width: 0;
+        border-right-width: 0;
+        width: 18px;
+        height: 10px;
+        -webkit-transform: rotate(-50deg);
+        position: absolute;
+        top:12px;
+        right: 18px;
+      }
+      .van-picker__title{
+        padding-right: 30px;
+      }
+      .front >>> .van-cell:not(:last-child)::after{
+        border: none;
+      }
+      .lines_{
+        padding-top: 8px;
+        border-bottom: 1px solid #ebedf0;
+      }
+      .van-cell{
+        font-size: 13px !important;
+        line-height: 25px !important;
+        padding: 16px 16px 16px 16px !important;
+      }
+      .prompting{
+        background-color: #fff;
+        padding: 20px 0;
+        border-radius: 7px;
+        height: 180px;
+      }
+      .prompting span{
+        padding: 5px 20px 8px 25px;
+      }
+      .prompting p{
+        padding: 10px 20px 0px 25px;
+      }
+      .lang >>> .van-cell__value{
+        display: flex;
+      }
+      .lang >>> .van-cell__value span{
+        width: 27px;
+        line-height: 20px;
+        height: 17px;
+        margin-top: 2px;
+      }
+      .van-list__finished-text{
+        margin-bottom: 14px;
+      }
+      .van-field__control{
+        -webkit-user-select:auto;
+      }
+      .omit{
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      .van-search .van-cell{
+        padding: 4px 15px !important;
+        background: white !important;
+      }
+      .van-search__content{
+        padding-left: 0 !important;
+        background: #F7F7F7 !important;
+      }
+      .van-search{
+        padding: 9px 15px 5px 15px;
+      }
+      .van-radio{
+        float: right;
+      }
+      .van-tabs__content{
+        padding-top: 44px;
+      }
+      .coupons{
+        background: url('static/images/u6978.png') no-repeat;
+        height: 76px;
+        background-size: 100% 100%;
+        margin: 10px 15px;
+      }
+      .coupons_inadequate{
+        background: url('static/images/u7955.png') no-repeat;
+        height: 76px;
+        background-size: 100% 100%;
+        margin: 10px 15px;
+      }
+      .coupons_failure{
+        background: url('static/images/u7961.png') no-repeat;
+        height: 76px;
+        background-size: 100% 100%;
+        margin: 10px 15px;
+      }
+      .coupons_another{
+        background: url('static/images/u7967.png') no-repeat;
+        height: 76px;
+        background-size: 100% 100%;
+        margin: 10px 15px;
+      }
+      .define_r{
+        font-size: 16px;
+        padding-left: 5px;
+        line-height: 14px;
+      }
+      .elongated{
+        width: 100%;
+        display: block;
+      }
+      .van-nav-bar__arrow{
+        font-size: 17px !important;
+        color: black !important;
+      }
+      .van-dialog__confirm{
+        color: #f5db44;
+      }
+      .van-icon-question-o{
+        padding-top: 1px;
+        color: #999999;
+        font-size: 14px;
+      }
+    </style>
