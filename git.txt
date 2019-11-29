@@ -1,0 +1,60 @@
+git操作
+进入ssh
+cd ~/.ssh
+
+打印ssh
+cat id_rsa.pub
+
+打印所有分支
+git branch -a
+
+创建分支test
+git branch test
+
+
+切换到分支test
+git checkout '分支名称'
+
+推送本地分支到远程仓库
+git push origin （分支名称）
+
+
+提交
+git add * 
+git commit -m '注释'
+git push -u origin master(分支名称)
+git push -u origin 1.2
+
+
+合并分支test到master
+首先提交本地文件到test分支，然后切换到master分支
+合并test到master
+git merge test
+
+提交master分支到服务器
+git push origin master
+
+删除分支
+git branch -d test
+
+-------------------------------------------------------------
+本地连接到github仓库
+git init
+git clone （ssh key）
+进入拉取下来的目录打开git即可
+----------------------------------------------------------------------
+sourcetree安装和使用
+下载2.4.8版本（本地下载文件夹sourceTree.zip文件）
+或者https://download.csdn.net/download/semanteme/10749553
+
+破解安装，记住必须要翻墙才可以登陆网络，跳过登陆步骤，详情可以参考安装步骤
+https://blog.csdn.net/Semanteme/article/details/83477082
+
+可以选择本地已经绑定git仓库的文件夹，"+" -> "create" -> "选择本地仓库"
+提交是本地分支跟新的东西上传到缓存
+点选分支可以切换分支
+点击拉取下载该分支最新的内容
+推送将当前缓存的内容推送到分支上
+合并分支，就是将当前内容合并到主分支上
+
+可以看一下网上教程，如何使用sourceTree
