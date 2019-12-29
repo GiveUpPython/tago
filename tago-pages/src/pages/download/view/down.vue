@@ -24,10 +24,15 @@ export default {
       CRM_Contact_Form_Task_Label: false,
       page: 1,
       loading: false,
-      finished: false
+      finished: false,
+      url: 'https://sj.qq.com/myapp/detail.htm?apkName=com.xunli.qianyin'
     }
   },
-  mounted() {
+  mounted () {
+    let ua = navigator.userAgent.toLowerCase()
+    let isWeixin = ua.indexOf('micromessenger') !== -1
+    let isAndroid = ua.indexOf('android') !== -1
+    let isIos = (ua.indexOf('iphone') !== -1) || (ua.indexOf('ipad') !== -1)
     let u = navigator.userAgent
     // Android终端
     let isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/) // ios终端
@@ -46,7 +51,11 @@ export default {
       }
     }).then(res => {
       console.log(res.result.data)
-      window.location.href = res.result.data.download_url
+      if (isWeixin) {
+        window.location.href = 'https://sj.qq.com/myapp/detail.htm?apkName=com.xunli.qianyin'
+      } else {
+        window.location.href = res.result.data.download_url
+      }
       //   alert(res.result.data.download_url)
       //   console.log(res.result.data.download_url)
     })
